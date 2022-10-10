@@ -1,0 +1,44 @@
+﻿@using CLOUD_LIB
+@model List<FaturaModel>
+@using Newtonsoft.Json;
+
+@{
+    ViewData["Title"] = "Lista de Faturas";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Lista de Artigos</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Morada de Entrega</th>
+                <th scope="col">Utilizador</th>
+                <th scope="col">Detalhes</th>
+                <th scope="col">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                foreach (FaturaModel fatura in Model)
+                {
+                    <tr>
+                        <th scope="row">@fatura.ID</th>
+                        <th scope="row">@fatura.MoradaEntrega</th>
+                        <th scope="row">@fatura.Utilizador</th>
+                        <th scope="row">@fatura.Detalhes</th>
+                        <th scope="row">@fatura.Total</th>
+                        <td>
+                            <div class="btn-group" role="group">
+                                <a role="button" class="btn btn-primary" asp-route-id="@fatura.FaturaID" asp-controller="Fatura" asp-action="Apagar">Apagar</a>
+                            </div>
+                        </td>
+                    </tr>
+
+                }
+            }
+        </tbody>
+    </table>
+</div>
+

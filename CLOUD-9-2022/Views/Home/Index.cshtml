@@ -1,0 +1,14 @@
+﻿@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    ViewData["Title"] = "Página Inicial";
+}
+<div class="text-center">
+    <h1 class="display-4">Bem-vindo ao nosso site</h1>
+    <p>Entre no mundo do estudo das aves e tire as suas dúvidas no nosso forum de questões</p>
+    @*<h1>@Context.Session.GetString("SessaoUtilizador")</h1>*@
+    @*@if(Session["Login"]!=null)
+            {
+
+            }*@
+</div>

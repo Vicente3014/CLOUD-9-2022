@@ -1,0 +1,49 @@
+﻿@using CLOUD_LIB; 
+@model List<ArtigoModel>
+@{      
+    ViewData["Title"] = "Lista de artigos";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Lista de Artigos</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Descrição</th>
+                <th scope="col">Imagem</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                foreach (ArtigoModel artigo in Model)
+                {
+                    <tr>
+                        <th scope="row">@artigo.ID</th>
+                        <th scope="row">@artigo.Nome</th>
+                        <th scope="row">@artigo.Categoria</th>
+                        <th scope="row">@artigo.Descricao</th>
+                        <th scope="row">@artigo.Imagem</th>
+                        <td>
+                            <div class="btn-group" role="group">
+                                <a role="button" class="btn btn-primary" asp-route-id="@artigo.ID" asp-controller="Artigo" asp-action="Apagar">Apagar</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="btn-group" role="group">
+                                <a role="button" class="btn btn-primary" asp-route-id="@artigo.ID" asp-controller="Artigo" asp-action="Editar">Editar</a>
+                            </div>
+                        </td>
+                    </tr>
+
+                }
+            }
+
+
+        </tbody>
+    </table>
+    <a role="button" asp-controller="Artigo" asp-action="Adicionar">Adicionar Artigo</a>
+</div>

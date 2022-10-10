@@ -1,0 +1,20 @@
+﻿@using CLOUD_LIB;
+@using CLOUD_DATA;
+@using CLOUD_REPOS_LIB;
+@model CategoriaModel;
+
+@{
+    ViewData["Title"] = "Adicionar";
+}
+<div class="text-center">
+    <h1 class="display-3">Registo de categorias</h1>
+</div>
+<form asp-controller="Categoria" asp-action="Adicionar">
+    <div class="form-group">
+        <label for="Nome">Nome</label>
+        <input type="text" asp-for="Nome" class="form-control" placeholder="Digite o nome da categoria" />
+        <span asp-validation-for="Nome" class="text-danger"></span>
+    </div>
+    <button type="submit" asp-controller="Categoria" asp-action="Adicionar" class="btn btn-primary btn-block">Adicionar</button>
+    <button class="btn btn-secondary btn-block" asp-action="Index" asp-controller="Categoria">Voltar</button>
+</form>

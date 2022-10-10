@@ -1,0 +1,48 @@
+﻿@using CLOUD_LIB;
+@model UtilizadorModel
+@{
+    
+    ViewData["Title"] = "Login";
+}
+<body style="background-color:antiquewhite">
+<section class="vh-100">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6 text-black">
+
+                <div>
+
+                    <form asp-controller="Utilizador" asp-action="Entrar" method="post" style="width: 23rem;">
+
+                        <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Login</h3>
+
+                        <div class="mb-3">
+                            <label for="Login" class="form-label">Login</label>
+                            <input type="text" asp-for="Login" class="form-control" id="Login" />
+                            @Html.ValidationMessageFor(x=>x.Login)
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="Login" class="form-label">Password</label>
+                            <input type="password" asp-for="Password" class="form-control" id="Password" />
+                            @Html.ValidationMessageFor(x=>x.Password)
+                        </div>
+
+                        <button type="submit">Login</button>
+
+                        <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Esqueceu a palavra-passe?</a></p>
+                        <p>Ainda não tem conta? <a href="Registo" class="link-info">Registe-se</a></p>
+
+                    </form>
+
+                </div>
+
+            </div>
+            <div class="col-sm-6 px-0 d-none d-sm-block">
+                <img src="https://www.10wallpaper.com/wallpaper/1366x768/1402/nature_bird_branch-Animal_Photo_Wallpaper_1366x768.jpg"
+                     alt="Login image" class="w-100 vh-100" style="object-fit:cover; object-position:center;">
+            </div>
+        </div>
+    </div>
+</section>
+</body>

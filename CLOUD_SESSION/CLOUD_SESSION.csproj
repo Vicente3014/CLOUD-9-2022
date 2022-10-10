@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CLOUD-DATA\CLOUD-DATA.csproj" />
+    <ProjectReference Include="..\CLOUD-LIB\CLOUD-LIB.csproj" />
+    <ProjectReference Include="..\REPOS_LIB\CLOUD_REPOS_LIB.csproj" />
+  </ItemGroup>
+
+</Project>

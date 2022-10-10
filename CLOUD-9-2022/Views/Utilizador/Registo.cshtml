@@ -1,0 +1,34 @@
+﻿@using CLOUD_LIB;
+@model UtilizadorModel
+@{ 
+    
+    ViewData["Title"] = "Registo";
+}
+
+<div class="text-center">
+    <h1 class="display-3">Registo de conta</h1>
+</div>
+
+<form asp-controller="Utilizador" asp-action="Registo" method="post">
+    <div class="form-group">
+        <label for="Nome">Nome</label>
+        <input type="text" asp-for="Nome" class="form-control" placeholder="Digite o seu nome" />
+        <span asp-validation-for="Nome" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="Login">Nome de Utilizador</label>
+        <input type="text" asp-for="Login" class="form-control" placeholder="Digite o seu nome de utilizador" />
+        <span asp-validation-for="Login" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="Email">Email</label>
+        <input type="text" asp-for="Email" class="form-control" placeholder="Digite o seu Email" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="Password">Password</label>
+        <input type="text" asp-for="Password" class="form-control" placeholder="Digite a sua Password" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+    <button type="submit" value="Registo" class="btn btn-primary btn-block" asp-controller="Utilizador" asp-action="Registo">Registar</button>
+</form>

@@ -1,0 +1,44 @@
+﻿@using CLOUD_LIB;
+@model ArtigoModel
+
+@{
+    ViewData["Title"] = "Adicionar";
+}
+<div class="text-center">
+    <h1 class="display-3">Registo de artigos</h1>
+</div>
+
+<form asp-controller="Artigo" asp-action="Adicionar" method="post">
+
+    <div class="form-group">
+        <label for="Nome">Nome</label>
+        <input type="text" asp-for="Nome" class="form-control" placeholder="Digite o nome do artigo" />
+    </div> 
+    
+    <div class="form-control">
+        <label for="Categoria">Categoria</label>
+        <select asp-for="Categoria_ID">
+            @foreach (CLOUD_LIB.CategoriaModel x in ViewBag.Categorias)
+            {
+                <option value="@x.ID">@x.Nome</option>
+            }
+        </select>
+    </div>
+    
+    <div class="form-group">
+        <label for="Descricao">Descrição</label>
+        <input type="text" asp-for="Descricao" class="form-control" placeholder="Digite a descrição do artigo" />
+    </div>
+
+    <div class="form-group">
+        <label for="Valor">Valor</label>
+        <input type="text" asp-for="Valor" class="form-control" placeholder="Digite o valor do artigo" />
+    </div>
+
+    <div class="form-group">
+        <label for="Imagem">Imagem</label>
+        <input type="file" asp-for="Imagem" class="form-control" placeholder="Selecione uma imagem para o artigo" />
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block">Registar artigo</button>
+</form>
